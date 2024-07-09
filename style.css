@@ -1,0 +1,166 @@
+* {
+    margin: 0; /* zerando a margen */
+    padding: 0; /* zerando a altura */
+}
+
+:root { /* tag para a criação de variaveis no css*/
+    --branco-principal: #FFFFFF;
+    --cinza-secundario: #C0C0C0;
+    --botao-azul: #167BF7;
+    --cor-de-fundo: #00030C;
+    --fonte-principal: 'Inter';
+    --botao-azul-efeito: #3c92fa;
+}
+
+body { /*corpo principal do projeto ou o pai de tudo, tudo abaixo será aplicado para todos os itens*/
+    background-color: var(--cor-de-fundo);
+    color: var(--branco-principal);
+    font-family: var(--fonte-principal);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.principal {
+    background-image: url("assets/Background.png"); /* usado para inserir a imagem de fundo e foi 
+    usada aqui no css pois Pois a imagem “Background.png” é decorativa e seu contexto não muda a leitura da página.
+    em caso diferente inserir no img dentro do html*/
+    background-repeat: no-repeat; /* colocado para não repetir a imagem de fundo*/
+    background-size: contain; /*alterando o tamanho usando todos o espaço */
+    align-items: center;
+    text-align: center; /*A <section> que criamos para a primeira seção, por padrão, veio com display: block. Assim, 
+    o text-align alinhou todo o conteúdo, incluindo a imagem.*/
+}
+
+.container { /* classe nova criada para ser usada em todas as seções das páginas*/ 
+    height: 100vh; /* inserido para altura e tamanho de tela 100% da tela*/
+    display: grid; /*O grid vai separando os elementos da tela, um ao lado do outro ou abaixo*/
+    grid-template-columns: 50% 50%; /*ao inserir este tag ele esta colocando em coluna os itenns da tela e
+    separando a tels em duas cada um com 50% do tamanho*/
+}
+
+.container__botao {
+    background-color: var(--botao-azul);
+    border-radius: 5px;
+    padding: 1em; /*Paddings criam um espaçamento dentro do elemento*/
+    color: var(--branco-principal);
+    display:block; /* usado para ocupar todo o espaço de tela*/
+    text-decoration: none; /*tira a decoração do texto que geralmente vem com linha*/
+    margin-bottom: 1em; /*Margins criam um espaçamento ao redor do elemento*/
+}
+
+.botao_secundario {
+    background-color: transparent;
+    border: 2px solid var(--branco-principal);
+}
+
+.container__aviso {
+    font-size: 12px;
+    color: var(--cinza-secundario);
+}
+
+.container__titulo {
+    font-size: 28px; /* tamanho da fonte que quer usar no titulo*/
+    font-weight: 700; /* peso da fonte como negrito*/
+}
+
+.container__imagem {
+    margin: 1em 0 2em 0;
+}
+
+.container__caixa {
+    margin: 0 6em;
+}
+
+.secundario__imagem {
+    width: 80%;
+}
+
+.secundario {
+    align-items: center;
+    margin: 0 10em;
+}
+
+.descricao__titulo {
+    font-weight: 700;
+    font-size: 48px;
+    color: var(--branco-principal);
+    margin-bottom: 0.1em;
+}
+
+.descricao__texto {
+    color: var(--cinza-secundario);
+}
+
+.secundario__botao {
+    display: inline-block; /* O display inline-block tenta pegar as melhores 
+    partes do inline e do block, que é como o nome diz*/
+    margin-top: 1em;
+}
+
+.container__descricao {
+    padding: 2em;
+}
+
+.dispositivos__lista {
+    display: flex; /* para colocar todos os itens da lista em linha uma ao lado do outro por padrão*/
+    justify-content: center; /* para colocar todos os itens no centro*/
+    list-style-type: none; /*para limpar os pontos da lista deixando sem nada*/
+    margin: 5em 0; /* para dar um afastamento entre o texto e as imagens*/
+}
+
+.dispositivos {
+    text-align: center; /*usado para centralizar todos os textos dentro da seção*/
+}
+
+.dispositivos__titulo {
+    font-size: 48px;
+    color: var(--branco-principal);
+}
+
+.lista__item {
+    font-size: 32px;
+    color: var(--branco-principal);
+}
+
+.rodape__lista {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin-top: 1em;
+}
+
+.lista__link a{
+    text-decoration: none;
+    color: var(--branco-principal);
+    margin-left: 1em;
+}
+
+.rodape__texto {
+    margin: 1em 0;
+    color: var(--cinza-secundario);
+    font-size: 14px;
+}
+
+.rodape {
+    text-align: center;
+    margin: 5em 3em;
+}
+
+/*Uma pseudo-classe CSS é uma propriedade que é adicionada ao final dos seletores que especifica o 
+estado que esse elemento está. Ele detecta, por exemplo, se o elemento está com um mouse em cima dele, 
+construindo uma experiência interativa com o usuário.
+é o que estamos usando abaixo exemplo :hover*/
+
+.lista__link a:hover { /*usamos para colocar design no botão ao passar o mouse mudar*/
+    color: var(--botao-azul); /* ao passar o mouse no elemento ficará azul*/
+    font-size: larger; /*ao passar o mouse ficará grande a fonte*/
+}
+
+.lista__link a:active { /*usamos para ao clicar ele ativar para outra cor neste caso amarelo*/
+    color: yellowgreen;
+}
+
+.container__botao:hover { /*usamos para colocar design no botão ao passar o mouse mudar*/
+    background-color: var(--botao-azul-efeito);
+    color: var(--cor-de-fundo);
+}
